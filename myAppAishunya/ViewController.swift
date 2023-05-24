@@ -30,8 +30,6 @@ class ViewController: UIViewController, QuoteManagerDelegate {
         sender.isUserInteractionEnabled = false
         showLoadingProgress()
         quoteManager.getQuote()
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-//        }
     }
 
     func didUpdateQuote(author: String, quote: String) {
