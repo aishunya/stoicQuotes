@@ -24,22 +24,24 @@ class ViewController: UIViewController, QuoteManagerDelegate {
     }
     
     @IBAction func buttonPressed(_ sender: UIButton) {
-        quoteManager.getQuote()
-        showLoadingProgress()
-        sender.isUserInteractionEnabled = false
+        quoteLabel.text = ""
+        authorLabel.text = ""
         sender.alpha = 0.7
-        activityIndicator.stopAnimating()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-            sender.alpha = 1.0
-            sender.isUserInteractionEnabled = true
-            sender.setTitle("one more", for: .normal)
-        }
+        sender.isUserInteractionEnabled = false
+        showLoadingProgress()
+        quoteManager.getQuote()
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
+//        }
     }
 
     func didUpdateQuote(author: String, quote: String) {
         DispatchQueue.main.async {
             self.quoteLabel.text = quote
             self.authorLabel.text = author
+            self.button.alpha = 1.0
+            self.button.isUserInteractionEnabled = true
+            self.button.setTitle("one more", for: .normal)
+            self.activityIndicator.stopAnimating()
         }
     }
     

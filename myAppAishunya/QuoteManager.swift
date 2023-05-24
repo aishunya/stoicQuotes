@@ -14,7 +14,7 @@ protocol QuoteManagerDelegate {
 struct QuoteManager {
     
     var delegate: QuoteManagerDelegate?
-     
+
     func getQuote() {
         let urlString = "https://api.themotivate365.com/stoic-quote"
         if let url = URL(string: urlString) {
