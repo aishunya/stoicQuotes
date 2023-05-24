@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  myAppAishunya
+//  Stoic Quotes
 //
 //  Created by Aisha Nurgaliyeva on 24.05.2023.
 //
